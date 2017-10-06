@@ -1,5 +1,12 @@
 public class EvenFibonacciNumbers {
   public static void main(String[] args) {
+      /*
+      * Program sums up all even numbers in the
+      * Fibonacci Sequence that are less than
+      * 4 million.
+      */
+
+
       //Current term in the Fibonacci Sequence
       int now = 2;
       //Last term in the Fibonacci Sequence
