@@ -1,4 +1,5 @@
 public class SmallestMultiple {
+  private static int[] neccesaryDivisorsOtherThan2 = {3, 5, 7, 11, 13, 17, 19};
   public static void main(String[] args) {
     /*
     * Finds smallest positive number divisible by all numbers from
@@ -24,8 +25,8 @@ public class SmallestMultiple {
 
   //Checks if the number is divisible from 20-3
   private static boolean checkDivisible(int number) {
-    for(int n = 20; n > 2; n--) {
-      if(number % n != 0)
+    for(int curr : neccesaryDivisorsOtherThan2) {
+      if(number % curr != 0)
         return false;
     }
     return true;
