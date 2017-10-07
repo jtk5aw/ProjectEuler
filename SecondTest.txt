@@ -1,10 +1,9 @@
-Also created as a test on GitHub. 
+Also created as a test on GitHub.
 Should be pulled to a local branch through git.
 
 ________________________________________________
 CHANGES WILL BE MADE HERE
-
-
-
-
+These are my changes.
+I hope they stay here.
+I also used vim to do this????
 ________________________________________________
