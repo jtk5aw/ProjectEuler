@@ -15,6 +15,23 @@ public class Helper {
     return x + fib(x - 1);
   }
 
+  //Determines if a number is Prime. Pretty slow when used repeatedly
+  // O(sqrt(n))
+  public static boolean isPrime(int num) {
+    if(num == 2 || num == 3)
+      return true;
+    else if(num < 2 || num % 2 == 0 || num % 3 == 0)
+      return false;
+    else {
+      for(int n = 5; (n * n) <= num; n+=2) {
+        if(num % n == 0)
+          return false;
+      }
+      return true;
+    }
+
+  }
+
 
 
   /*
