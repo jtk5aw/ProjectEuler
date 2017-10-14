@@ -29,8 +29,18 @@ public class Helper {
       }
       return true;
     }
-
   }
+
+    //Finds the product of an array of longs.
+    // ??O(n)??
+    public static long product(long[] nums) {
+      long product = 1;
+      for(int n = 0; n < nums.length; n++) {
+        product = product * nums[n];
+      }
+
+      return product;
+    }
 
 
 
@@ -54,7 +64,22 @@ public class Helper {
         begin++;
     }
     return new String(in);
-}
+  }
+
+  //**** Not sure if this works ****//
+  //Method used to cycle all the values in an int[].
+  //arr[0] becomes arr[length - 1]
+  // O(???)
+  /*
+  public static int[] cycle(int[] arr) {
+    int[] result = new int[arr.length];
+    for(int n = 1; n < arr.length; n++) {
+      result[n] = arr[n-1];
+    }
+    result[0] = arr[arr.length - 1];
+    return result;
+  }
+  */
 
 
 }
