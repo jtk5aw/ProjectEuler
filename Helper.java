@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.ArrayList;
 public class Helper {
     /*
@@ -38,6 +39,21 @@ public class Helper {
       }
     }
 
+    //Determines if a long is prime. Also pretty slow
+    public static boolean isPrime(long num) {
+      if(num == 2 || num == 3)
+        return true;
+      else if(num < 2 || num % 2 == 0 || num % 3 == 0)
+        return false;
+      else {
+        for(long n = 5; (n * n) <= num; n+=2) {
+          if(num % n == 0)
+            return false;
+        }
+        return true;
+      }
+    }
+
     //Determines if a BigInteger is prime. Also pretty slow when used repeatedly
     // O(sqrt(n))
     public static boolean isPrime(int num) {
@@ -57,41 +73,29 @@ public class Helper {
     //Finds a list of primes with upper limit long p
     //http://www.mathblog.dk/sum-of-all-primes-below-2000000-problem-10/
     //Sieve of Eratosthenes
-    public static ArrayList<Long> listPrimes(long p) {
-      //Fills array to test
-      long[] initial = new long[(int)p-2];
-      for(int n = 2; n < p; n++) {
-        initial[n-2] = n;
+    public static long primeSum(long p) {
+      long sum = 0;
+      long curr = 2;
+      while(curr <= p) {
+        if(isPrime(curr))
+          sum += curr;
+        curr++;
       }
-      //Finds the primes
-      for(int n = 0; n < initial.length; n++) {
-        if(initial[n] == 0) {
-
-        }
-        else {
-          long toTestWith = initial[n];
-          long currMultiple = 1;
-          while(toTestWith < initial[initial.length - 1]) {
-            //Removes the current multiple
-            initial[(int)toTestWith] = 0L;
-            //Moves on to next multiple
-            currMultiple++;
-            toTestWith = toTestWith * currMultiple;
-          }
-        }
-      }
-      //Finds the resultant array
-      ArrayList<Long> result = new ArrayList<Long>();
-      for(int n = 0; n < initial.length; n++) {
-        if(initial[n] != 0)
-          result.add(initial[n]);
-      }
-      return result;
+      return sum;
     }
 
 
     //Finds the sum of an array of longs
     public static long sum(long[] nums) {
+      long sum = 0;
+      for(long curr : nums) {
+        sum += curr;
+      }
+      return sum;
+    }
+
+    //Fins the sum of an ArrayList of longs
+    public static long sum(ArrayList<Long> nums) {
       long sum = 0;
       for(long curr : nums) {
         sum += curr;
@@ -107,7 +111,6 @@ public class Helper {
       for(int n = 0; n < nums.length; n++) {
         product = product * nums[n];
       }
-
       return product;
     }
 
@@ -147,6 +150,7 @@ public class Helper {
         }
         return new String(in);
       }
+
 
       //**** Not sure if this works ****//
       //Method used to cycle all the values in an int[].
