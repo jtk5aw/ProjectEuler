@@ -152,20 +152,4 @@ public class Helper {
       }
 
 
-      //**** Not sure if this works ****//
-      //Method used to cycle all the values in an int[].
-      //arr[0] becomes arr[length - 1]
-      // O(???)
-      /*
-      public static int[] cycle(int[] arr) {
-      int[] result = new int[arr.length];
-      for(int n = 1; n < arr.length; n++) {
-        result[n] = arr[n-1];
-      }
-      result[0] = arr[arr.length - 1];
-      return result;
-    }
-    */
-
-
 }
