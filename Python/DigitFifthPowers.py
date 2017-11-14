@@ -8,7 +8,7 @@ def findIf5thPowerSum(n):
         return True
     else:
         return False
-# It can easily be shown that base-10 n-narcissistic numbers can exist only for n<=60, since n*9^n<10^(n-1) (http://mathworld.wolfram.com/NarcissisticNumber.html)
+
 totalSum = int(0)
 for x in range(2, 1000000):
     if(findIf5thPowerSum(str(x))):
