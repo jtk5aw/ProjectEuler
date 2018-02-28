@@ -5,6 +5,8 @@ public class Helper {
     /*
     * Used as a class to store helper methods
     * when doing Project Euler Problems.
+    * NOT SUPER HELPFUL
+    * MOST ALGORITHMS ARE CONTAINED TO THEIR PROBLEMS
     */
 
     final static BigInteger TWO = new BigInteger("2");

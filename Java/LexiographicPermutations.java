@@ -16,16 +16,13 @@ public class LexiographicPermutations {
     int permutation = 1;
 
     //Finds the one millionth permutation
-    //NOT SURE WHY IT IS ONE BEHIND
-    while(permutation <= 1000010) {
-      if(permutation >= 1000000)
-        System.out.println(Arrays.toString(currPerm));
+    while(permutation < 1000000) {
       nextPermutation(currPerm, MAX);
       permutation++;
     }
 
     //Prints out the result
-    System.out.println("The one millionth permutation is: " + Arrays.toString(currPerm));
+    System.out.println("The " + permutation + " permutation is :" + Arrays.toString(currPerm));
   }
   //Sets arr to it's next lexiographic permutatio based on max
   private static void nextPermutation(int[] arr, int max) {
